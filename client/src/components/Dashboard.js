@@ -9,7 +9,7 @@ const Dashboard = () => {
     const [token, setToken] = useState('');
     const [expire, setExpire] = useState('');
     const [users, setUsers] = useState([]);
-    const history = useNavigate();
+    const navigate = useNavigate();
  
     useEffect(() => {
         refreshToken();
@@ -25,7 +25,7 @@ const Dashboard = () => {
             setExpire(decoded.exp);
         } catch (error) {
             if (error.response) {
-                history.push("/");
+                navigate("/");
             }
         }
     }
